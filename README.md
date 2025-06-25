@@ -2,6 +2,6 @@
 
 #### List
 
-- understanding ESM and MODULE format
+- understanding ESM and MODULE
 - Logger-app
 - ToDo-app
