@@ -7,3 +7,5 @@ const bootstrap = async () => {
   });
 };
 bootstrap();
+
+// server.ts ar kaj : server on / off kora , server error handle kora

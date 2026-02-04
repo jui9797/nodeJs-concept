@@ -12,7 +12,7 @@ const text = inputArguements.join(" ").concat("\n");
 const timeStamp = new Date().toISOString();
 const message = `Text: ${text} Date: ${timeStamp} \n`;
 if (!message) {
-  console.log("❌ Please provide a text");
+  console.log(" Please provide a text");
   console.log("Example: node index.js hello world");
   process.exit(1);
 }
