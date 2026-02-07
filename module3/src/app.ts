@@ -1,9 +1,9 @@
 import express, { Application, Request, Response } from "express";
-import fs from "fs";
+
 import path from "path";
+import { todosRouter } from "./app/todos/todos.routes";
 const app: Application = express();
-const port = 5000;
-const todosRouter = express.Router();
+
 //middleware
 app.use(express.json());
 app.use("/todos", todosRouter);
@@ -11,15 +11,6 @@ app.use("/todos", todosRouter);
 const filePath = path.join(__dirname, "../db/todo.json");
 app.get("/", (req: Request, res: Response) => {
   res.send("module 3 server is on");
-});
-app.get("/todos", (req: Request, res: Response) => {
-  const data = fs.readFileSync(filePath, { encoding: "utf-8" });
-  console.log(data);
-  res.json(data);
-});
-app.post("/todos/create-todo", (req: Request, res: Response) => {
-  const { title, body } = req.body;
-  res.send({ title, body });
 });
 
 export default app;
