@@ -13,11 +13,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./app"));
+const mongodb_1 = require("./config/mongodb");
 let server;
 const port = 5000;
 const bootstrap = () => __awaiter(void 0, void 0, void 0, function* () {
+    yield mongodb_1.client.connect();
+    console.log("Connected to MongoDB");
     server = app_1.default.listen(port, () => {
         console.log(`Module 3 is running on the http://localhost:${port}`);
     });
 });
 bootstrap();
+// server.ts ar kaj : server on / off kora , server error handle kora
+//todos-user
+//yyqpAwLTSbPhZRoy
